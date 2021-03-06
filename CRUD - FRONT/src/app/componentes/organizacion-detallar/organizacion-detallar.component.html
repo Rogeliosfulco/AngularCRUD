@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-user">
+            <div class="card-header">
+                <h5 class="card-title">{{OrganizacionSeleccionada.Nombre}}</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label><span title="Obligatorio" style="color:#ad0d17">*</span> Nombre de la
+                                organización</label>
+                            <input type="text" class="form-control" id="Nombre"
+                                [(ngModel)]="OrganizacionSeleccionada.Nombre" name="name" disabled />
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 "></div>
+                    <div class="col-md-5 ">
+                        <button type="submit" class="btn btn-default " routerLink="/organizaciones/">Volver</button>
+                    </div>
+                    <div class="col-md-2 "> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"> Usuarios de la organización</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Nombre
+                                    </th>
+
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let organizacion of OrganizacionSeleccionada.Usuario; let i = index"
+                                        [class.active]="i == currentIndex">
+                                        <td>
+                                            {{organizacion.NombreCompleto}}
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

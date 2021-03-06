@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> Organizaciones</h4>
+                <span class="text-right">Gestione las organizaciones </span>
+                <p class="text-right"> <a class="text-right" class="btn btn-light" routerLink="/Organizacioncrear/">
+                        Nueva organización</a></p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Usuarios
+                            </th>
+                            <th class="text-right">
+                                Acciones
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let organizacion of Registros; let i = index">
+                                
+                               
+                                <td>
+                                    {{organizacion.Nombre}}
+                                </td>
+                                <td >
+                                    <span *ngFor="let item2 of organizacion.Usuario; let i = index">
+                                        <i class="fa fa-check"></i>{{item2.NombreCompleto}}<br>
+                                    </span>
+                                </td>
+                                <td class="text-right">
+                                    <a routerLink="/organizaciones/{{organizacion.OrganizacionID}}"
+                                        class="btn btn-light"> <i class="nc-icon nc-zoom-split"></i></a>
+                                    <a routerLink="/OrganizacionEditar/{{organizacion.OrganizacionID}}"
+                                        class="btn btn-light"> <i class="nc-icon nc-single-copy-04"></i></a>
+
+                                    <a (click)="EliminarRegistro(organizacion.OrganizacionID)" class="btn btn-light"> <i
+                                            class="nc-icon nc-simple-remove"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

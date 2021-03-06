@@ -1,0 +1,12 @@
+API: C# 
+SQL: MSSQL
+FRONT: ANGULAR
+-----------------------------------
+
+Template de front: Paper Dashboard free. 
+Mensajes emergentes: SweetAlert
+
+
+
+
+

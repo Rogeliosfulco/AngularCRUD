@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> Usuarios </h4>
+                <span class="text-right">Gestione los usuarios </span>
+                <p class="text-right"> <a class="text-right" class="btn btn-light" routerLink="/UsuariosCrear/">
+                        Nuevo usuario</a></p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                N°
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Cédulla
+                            </th>
+                            <th>
+                                Teléfono
+                            </th>
+
+                            <th class="text-right">
+                                Acciones
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of Registros">
+                                <td>
+                                    {{item.UsuarioID}}
+                                </td>
+                                <td>
+                                    {{item.NombreCompleto}}
+                                </td>
+                                <td>
+                                    {{item.Cedula}}
+                                </td>
+                                <td>
+                                    {{item.Telefono}}
+                                </td>
+
+                                <td class="text-right">
+                                    <a routerLink="/Usuario/{{item.UsuarioID}}" class="btn btn-light"> <i
+                                            class="nc-icon nc-zoom-split"></i></a>
+                                    <a routerLink="/UsuariosEditar/{{item.UsuarioID}}" class="btn btn-light"> <i
+                                            class="nc-icon nc-single-copy-04"></i></a>
+                                    <a (click)="EliminarRegistro(item.UsuarioID)" class="btn btn-light"> <i
+                                            class="nc-icon nc-simple-remove"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

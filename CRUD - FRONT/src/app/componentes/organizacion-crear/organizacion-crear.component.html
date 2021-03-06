@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Agregar organización</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label><span title="Obligatorio" style="color:#ad0d17">*</span> Nombre de la organización</label>
+              <input class="form-control" id="Nombre" required [(ngModel)]="Item.Nombre" name="Nombre" />
+            </div>
+          </div>
+          <div class="col-md-4 "></div>
+          <div class="col-md-4 ">
+            <button type="submit" class="btn btn-primary " (click)="Registrar()">Registrar</button>
+            <button type="submit" class="btn btn-default " routerLink="/organizaciones/">Volver</button>
+          </div>
+          <div class="col-md-4 "> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

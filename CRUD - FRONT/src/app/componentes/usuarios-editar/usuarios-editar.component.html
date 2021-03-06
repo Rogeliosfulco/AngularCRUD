@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-user">
+            <div class="card-header">
+                <h5 class="card-title">Usuario N° {{Item.UsuarioID}}</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><span title="Obligatorio" style="color:#ad0d17">*</span>
+                                Nombre completo</label>
+                            <input type="text" class="form-control" id="NombreCompleto"
+                                [(ngModel)]="Item.NombreCompleto" name="NombreCompleto" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><span title="Obligatorio" style="color:#ad0d17">*</span>
+                                Cédula</label>
+                            <input type="text" class="form-control" id="Cedula" [(ngModel)]="Item.Cedula"
+                                name="Cedula" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><span title="Obligatorio" style="color:#ad0d17">*</span>
+                                Fecha de nacimiento</label>
+                            <input type="date" class="form-control" id="FechaNacimiento"
+                                [(ngModel)]="Item.FechaNacimiento" value="Item.FechaNacimiento"
+                                name="FechaNacimiento" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><span title="Obligatorio" style="color:#ad0d17">*</span>
+                                Teléfono</label>
+                            <input type="text" class="form-control" id="Telefono" [(ngModel)]="Item.Telefono"
+                                name="Telefono" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label><span title="Obligatorio" style="color:#ad0d17">*</span>
+                                Organización</label>
+                            <select class="form-control" [(ngModel)]="Item.OrganizacionID" name="OrganizacionID">
+                                <option value="">Seleccione una opción</option>
+                                <option *ngFor="let item of Organizaciones; let i = index"
+                                    value='{{item.OrganizacionID}}'>{{item.Nombre}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary " (click)="Actualizar()">Editar</button>
+                        <button type="submit" class="btn btn-default " routerLink="/Usuarios/">Volver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
